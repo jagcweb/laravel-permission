@@ -102,7 +102,8 @@ if($data['role'] == 'user'){
 
 
 11. Creamos las rutas de acceso y usamos los middleware:
-```Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin')->middleware('permission:access-admin');
+```
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin')->middleware('permission:access-admin');
 ...
 ```
 
@@ -118,7 +119,7 @@ if($data['role'] == 'user'){
 
 13. Intentando acceder a rutas que no tenemos acceso introducciendo manualmente el enlace:
 De intentar esto, lo único que obtendremos será esta imagen:
-https://i.imgur.com/eshkOen.png
+[img]https://i.imgur.com/eshkOen.png[/img]
 
 ---------------------------------------------------FIN-------------------------------------------
 
