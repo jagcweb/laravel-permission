@@ -9,13 +9,13 @@ Spatie Laravel Permission - Tutorial básico en Español.
 3. Instalar Spatie Laravel Permission:
 ```composer require spatie/laravel-permission```
 
-4. Añadir el service provider en el fichero ```config/app.php```:
+4. Añadir el service provider en el fichero 'config/app.php':
 ```'providers' => [
 // ...
 Spatie\Permission\PermissionServiceProvider::class,
 ],```
 
-5. Añadir también al middleware en el fichero ```Kernel.php```:
+5. Añadir también al middleware en el fichero 'Kernel.php':
 ```protected $routeMiddleware = [
 'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
 'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
