@@ -169,6 +169,6 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->nam
 De intentar esto, lo único que obtendremos será esta imagen:
 [img]https://i.imgur.com/eshkOen.png[/img]
 
----------------------------------------------------FIN-------------------------------------------
+----------------------------------------------------------------------------------------------
 
 Más información: https://github.com/spatie/laravel-permission && https://spatie.be/docs/laravel-permission/v3/basic-usage/basic-usage
