@@ -13,7 +13,8 @@ Spatie Laravel Permission - Tutorial básico en Español.
 ```'providers' => [
 // ...
 Spatie\Permission\PermissionServiceProvider::class,
-],```
+],
+```
 
 5. Añadir también al middleware en el fichero 'Kernel.php':
 ```protected $routeMiddleware = [
