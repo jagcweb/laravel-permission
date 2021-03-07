@@ -9,18 +9,19 @@ Spatie Laravel Permission - Tutorial básico en Español.
 3. Instalar Spatie Laravel Permission:
 ```composer require spatie/laravel-permission```
 
-4. Añadir el service provider en el fichero 'config/app.php':
+4. Añadir el service provider en el fichero ```config/app.php```:
 ```'providers' => [
 // ...
 Spatie\Permission\PermissionServiceProvider::class,
 ],
 ```
 
-5. Añadir también al middleware en el fichero 'Kernel.php':
+5. Añadir también al middleware en el fichero ```Kernel.php```:
 ```protected $routeMiddleware = [
 'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
 'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
-];```
+];
+```
 
 6. Crear las migraciones:
 ```php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"```
@@ -62,7 +63,8 @@ Ejemplo básico de creación de Roles y asignación de Permisos:
 
         $user = Role::create(['name' => 'user']);
         $subadmin->givePermissionTo(['access-myaccount', 'access-contact']);
-    }```
+    }
+```
     
     
 8. Ejecutamos el seed:
@@ -79,7 +81,8 @@ Ejemplo básico de creación de Roles y asignación de Permisos:
       <br/>
       <input type="radio" id="huey" name="role" value="user" checked> Common User
    </div>
-</div>```
+</div>
+```
 
 10. Recogemos los roles en el registro y asignamos dependiendo el tipo de rol que nos llegue:
 
@@ -94,12 +97,14 @@ if($data['role'] == 'subadmin'){
 
 if($data['role'] == 'user'){
   $user->assignRole('user');
-}```
+}
+```
 
 
 11. Creamos las rutas de acceso y usamos los middleware:
 ```Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin')->middleware('permission:access-admin');
-...```
+...
+```
 
 12. Creamos enlaces hacia las rutas en el home:
 (Con @can únicamente podrán ver estos enlaces los usuarios cuyo rol tengan el privilegio indicado)
@@ -108,7 +113,8 @@ if($data['role'] == 'user'){
    <p><a href="{{route('admin')}}">Administration</a></p>
 @else
    <p><a style="color:gray;">Administration</a></p>
-@endcan```
+@endcan
+```
 
 13. Intentando acceder a rutas que no tenemos acceso introducciendo manualmente el enlace:
 De intentar esto, lo único que obtendremos será esta imagen:
