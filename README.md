@@ -167,7 +167,7 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->nam
 
 13. Intentando acceder a rutas que no tenemos acceso introducciendo manualmente el enlace:
 De intentar esto, lo único que obtendremos será esta imagen:
-[img]https://i.imgur.com/eshkOen.png[/img]
+![image](https://i.imgur.com/eshkOen.png)
 
 ----------------------------------------------------------------------------------------------
 
